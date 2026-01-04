@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: best-effort-class-pod
+spec:
+  containers:
+  - name: best-effort-class-container
+    image: polinux/stress
+    ports:
+    - containerPort: 80
+    command: ["stress"]
+    args: ["--vm", "1", "--vm-bytes", "220Mi", "--vm-hang", "180"]
